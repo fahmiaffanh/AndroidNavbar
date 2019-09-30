@@ -27,4 +27,20 @@ class MainActivity : AppCompatActivity() {
 
         tab_layout.tabGravity= TabLayout.GRAVITY_FILL
     }
+    private fun setListenerForClick(){
+        pager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
+        tab_layout.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
+            override fun onTabReselected(p0: TabLayout.Tab?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onTabUnselected(p0: TabLayout.Tab?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                pager.currentItem = tab.position
+            }
+        })
+    }
 }
